@@ -10,9 +10,8 @@ export default function Template({
   const { site, markdownRemark } = data // data.markdownRemark holds your post data
   const { siteMetadata } = site
   const { frontmatter, html } = markdownRemark
-  const presentUrl = window.location.href
   let disqusConfig = {
-    url: `${presentUrl}`,
+    url: `${window.location.href}`,
     identifier: frontmatter.title + frontmatter.date,
     title: frontmatter.title,
   }
