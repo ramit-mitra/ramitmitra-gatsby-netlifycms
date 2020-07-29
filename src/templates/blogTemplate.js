@@ -1,6 +1,7 @@
 import React from "react"
 import Helmet from 'react-helmet';
 import { graphql } from "gatsby"
+import { Disqus, CommentCount } from 'gatsby-plugin-disqus'
 import Layout from "../components/layout"
 
 export default function Template({
@@ -9,6 +10,13 @@ export default function Template({
   const { site, markdownRemark } = data // data.markdownRemark holds your post data
   const { siteMetadata } = site
   const { frontmatter, html } = markdownRemark
+  
+  let disqusConfig = {
+    url: `${config.siteUrl+location.pathname}`,
+    identifier: post.id,
+    title: post.title,
+  }
+  
   return (
     <Layout>
       <Helmet>
@@ -36,6 +44,7 @@ export default function Template({
           />
         </article>
       </div>
+	  <Disqus config={disqusConfig} />
     </Layout>
   )
 }
