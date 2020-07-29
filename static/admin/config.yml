@@ -1,12 +1,12 @@
 backend:
   name: git-gateway
-  branch: master
+  branch: master # Branch to update (master by default)
 
-media_folder: static/assets
+media_folder: static/assets # Folder where user uploaded files should go
 public_folder: /assets
-publish_mode: editorial_workflow
+publish_mode: editorial_workflow # Enable drafts
 
-collections:
+collections: # A list of collections the CMS should be able to edit
   - name: settings
     label: Settings
     files:
@@ -41,12 +41,14 @@ collections:
                 label: Description
                 default: ''
                 required: false
+  # BLOG POSTS
   - name: blog
     label: Blog
     folder: _data/blog
     slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
-    create: true
-    fields:
+    sort: "date:desc" # Default is title:asc
+    create: true # Allow users to create new documents in this collection
+    fields: # The fields each document in this collection have
       - {
           label: Template,
           name: template,
