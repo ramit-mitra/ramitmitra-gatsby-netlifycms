@@ -11,7 +11,7 @@ export default function Template({
   const { siteMetadata } = site
   const { frontmatter, html } = markdownRemark
   let disqusConfig = {
-    url: `${window.location.href}`,
+    url: `${site.siteUrl + frontmatter.path}`,
     identifier: frontmatter.title + frontmatter.date,
     title: frontmatter.title,
   }
@@ -54,6 +54,7 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+		siteUrl
       }
     }
     markdownRemark(frontmatter: { path: { eq: $path } }) {
