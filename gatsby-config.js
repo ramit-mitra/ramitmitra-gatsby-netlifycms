@@ -9,6 +9,12 @@ module.exports = {
   siteMetadata: require("./site-meta-data.json"),
   plugins: [
     {
+      resolve: `gatsby-plugin-disqus`,
+      options: {
+        shortname: `ramitmitra`
+      }
+    },
+	{
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `markdown-pages`,
@@ -37,18 +43,18 @@ module.exports = {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         // The property ID; the tracking code won't be generated without it. replace with yours
-        trackingId: "UA-164743872-1",
+        trackingId: "UA-158723682-1",
         head: true,
       }
     },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Delog GatbsyJS Starter`,
-        short_name: `Delog`,
+        name: `Ramit Mitra`,
+        short_name: `RamitMitra`,
         start_url: `/`,
         background_color: `#fff`,
-        theme_color: `#381696`,
+        theme_color: `#362066`,
         display: `standalone`,
         icon: "src/images/icon.png",
       },
