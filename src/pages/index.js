@@ -64,6 +64,8 @@ export const pageQuery = graphql`
             title
             thumbnail
 			template
+			projectUrl
+			metaDescription
           }
         }
       }

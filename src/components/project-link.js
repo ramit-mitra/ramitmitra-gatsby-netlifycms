@@ -15,6 +15,10 @@ const PostLink = ({ post }) => (
         </Link>
       </h2>
       <div className="post-meta">{post.excerpt}</div>
+	  {!!post.frontmatter.projectUrl && (
+        <div className="post-meta"><a className="post-link" href={post.frontmatter.projectUrl} target="_blank" >Visit project link &nbsp; &rarr;</a></div>
+      )}
+      <div className="post-meta">{post.projectUrl}</div>
     </header>
   </article>
 )

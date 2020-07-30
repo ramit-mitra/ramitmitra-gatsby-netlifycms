@@ -6,13 +6,17 @@ import Layout from "../components/layout"
 
 export default function Template({
   data, // this prop will be injected by the GraphQL query below.
+  pageContext 
 }) {
   const { site, markdownRemark } = data // data.markdownRemark holds your post data
   const { siteMetadata } = site
   const { frontmatter, html } = markdownRemark
+  const { id } = pageContext.node
+  const { template } = pageContext.node.frontmatter
   let disqusConfig = {
     url: `${site.siteUrl + frontmatter.path}`,
-    identifier: frontmatter.title + frontmatter.date,
+    /* identifier: frontmatter.title + frontmatter.date, */
+    identifier: id,
     title: frontmatter.title,
   }
   
@@ -44,7 +48,7 @@ export default function Template({
         </article>
       </div>
 	  <br />
-	  <Disqus config={disqusConfig} />
+	  { template === 'BlogPost' ? <Disqus config={disqusConfig} /> : '' }
     </Layout>
   )
 }
