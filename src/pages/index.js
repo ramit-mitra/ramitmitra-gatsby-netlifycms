@@ -3,6 +3,7 @@ import Helmet from 'react-helmet';
 import { graphql } from 'gatsby'
 import Layout from "../components/layout"
 import PostLink from "../components/post-link"
+import ProjectLink from "../components/project-link"
 import HeroHeader from "../components/heroHeader"
 
 const IndexPage = ({
@@ -11,10 +12,18 @@ const IndexPage = ({
     allMarkdownRemark: { edges },
   },
 }) => {
+	
+	console.log(edges)
 
   const Posts = edges
     .filter(edge => !!edge.node.frontmatter.date) // You can filter your posts based on some criteria
+    .filter(edge => edge.node.frontmatter.template !== "Project")
     .map(edge => <PostLink key={edge.node.id} post={edge.node} />)
+	
+  const Projects = edges
+    .filter(edge => !!edge.node.frontmatter.date) // You can filter your posts based on some criteria
+    .filter(edge => edge.node.frontmatter.template === "Project")
+    .map(edge => <ProjectLink key={edge.node.id} post={edge.node} />)
 
   return (
     <Layout>
@@ -26,6 +35,10 @@ const IndexPage = ({
       <h2>Blog Posts &darr;</h2>
       <div className="grids">
         {Posts}
+      </div>
+      <h2 className="project-header">Projects &darr;</h2>
+      <div className="grids">
+        {Projects}
       </div>
     </Layout>
   )
@@ -50,6 +63,7 @@ export const pageQuery = graphql`
             path
             title
             thumbnail
+			template
           }
         }
       }
