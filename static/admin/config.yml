@@ -42,6 +42,44 @@ collections: # A list of collections the CMS should be able to edit
                 label: Description
                 default: ''
                 required: false
+  # PROJECTS
+  - name: project
+    label: Project
+    folder: _data/project
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    sort: "date:desc" # Default is title:asc
+    create: true # Allow users to create new documents in this collection
+    fields: # The fields each document in this collection have
+      - {
+          label: Template,
+          name: template,
+          widget: hidden,
+          default: Project,
+        }
+      - name: path
+        label: Path
+        widget: string
+        pattern: [/]
+        hint: "Path must start with /"
+      - widget: string
+        name: projectUrl
+        label: Project URL
+        required: false
+      - { name: date, label: Date, widget: datetime }
+      - { name: title, label: Title }
+      - label: Meta Description
+        name: metaDescription
+        widget: text
+        required: false
+      - label: Featured Image
+        name: thumbnail
+        widget: image
+        hint: "Image size 1280x800 works best :)"
+        required: false
+        media_library:
+          config:
+            multiple: false
+      - { name: body, label: Body, widget: markdown }
   # BLOG POSTS
   - name: blog
     label: Blog
