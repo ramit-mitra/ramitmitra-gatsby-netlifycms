@@ -254,6 +254,15 @@ a {
   font-size: 0.8rem;
   color: var(--text-secondary-color);
 }
+.project-title {
+	color: var(--primary-color);
+}
+.project-meta {
+	font-weight: 100;
+    margin-bottom: 0;
+  font-size: 1rem;
+  color: var(--text-secondary-color);
+}
 .site-footer {
   text-align: center;
   margin: 90px 0 16px;
