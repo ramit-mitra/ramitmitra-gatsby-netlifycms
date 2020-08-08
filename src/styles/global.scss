@@ -409,3 +409,14 @@ body.light {
   top: 8px;
   left: 2px;
 }
+
+hr {
+  border: 0;
+  height: 1px;
+  background-image: -webkit-linear-gradient(
+    left,
+    var(--background),
+    var(--primary-color),
+    var(--background)
+  );
+}

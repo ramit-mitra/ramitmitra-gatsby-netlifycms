@@ -21,14 +21,22 @@ export default ({ children }) => {
       <header className="site-header">
         <div className="site-title">
           <Link to="/">{data.site.siteMetadata.title}</Link>
-          <br />
+          <hr />
           <SocialIcon
             url="https://twitter.com/ramit_mitra"
+            fgColor="#fff"
             style={{ height: 25, width: 25 }}
           />
-          &nbsp;
+          &nbsp; &nbsp;
           <SocialIcon
             url="https://github.com/ramit-mitra"
+            fgColor="#fff"
+            style={{ height: 25, width: 25 }}
+          />
+          &nbsp; &nbsp;
+          <SocialIcon
+            url="https://medium.com/@ramit.mitra"
+            fgColor="#fff"
             style={{ height: 25, width: 25 }}
           />
         </div>
