@@ -1,11 +1,14 @@
-import React from "react"
-import { Link } from "gatsby"
+import React from "react";
+import { Link } from "gatsby";
 
 const PostLink = ({ post }) => (
   <article className="card ">
     <Link to={post.frontmatter.path}>
       {!!post.frontmatter.thumbnail && (
-        <img src={post.frontmatter.thumbnail} alt={post.frontmatter.title + "- Featured Shot"} />
+        <img
+          src={post.frontmatter.thumbnail}
+          alt={post.frontmatter.title + "- Featured Shot"}
+        />
       )}
     </Link>
     <header>
@@ -15,12 +18,21 @@ const PostLink = ({ post }) => (
         </Link>
       </h2>
       <div className="project-meta">{post.excerpt}</div>
-	  {!!post.frontmatter.projectUrl && (
-        
-		<div className="project-meta"><br /><a className="post-link" href={post.frontmatter.projectUrl} target="_blank" rel="noreferrer">Visit project link &nbsp; &rarr;</a></div>
+      {!!post.frontmatter.projectUrl && (
+        <div className="project-meta">
+          <br />
+          <a
+            className="post-link"
+            href={post.frontmatter.projectUrl}
+            target="_blank"
+            rel="noreferrer"
+          >
+            Visit project link &nbsp; &rarr;
+          </a>
+        </div>
       )}
       <div className="project-meta">{post.projectUrl}</div>
     </header>
   </article>
-)
-export default PostLink
+);
+export default PostLink;
