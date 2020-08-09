@@ -107,7 +107,7 @@ collections: # A list of collections the CMS should be able to edit
         name: "hidden"
         widget: "select"
         required: false
-        default: "No"
+        default: false
         options:
           - { label: "Yes", value: true }
           - { label: "No", value: false }
