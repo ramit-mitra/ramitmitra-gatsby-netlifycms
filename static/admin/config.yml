@@ -109,8 +109,8 @@ collections: # A list of collections the CMS should be able to edit
         required: false
         default: false
         options:
-          - { label: "Yes", value: true }
-          - { label: "No", value: false }
+          - { label: "Yes", value: "yes" }
+          - { label: "No", value: "no" }
         hint: "Mark this as YES to not show this post anywhere"
       - {
           label: "Categories",
