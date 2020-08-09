@@ -21,6 +21,11 @@ export default function Template({
     title: frontmatter.title,
   };
 
+  // console.log(frontmatter.hidden);
+
+  // if the post was hidden, you wont be able to see it and forced to return to home
+  if (frontmatter.hidden === "yes") return (window.location = "/");
+
   return (
     <Layout>
       <Helmet>
@@ -54,10 +59,14 @@ export default function Template({
             className="blog-post-content"
             dangerouslySetInnerHTML={{ __html: html }}
           />
+          <div className="blog-post-content">
+            <br />
+            <hr />
+            <br />
+            {template === "BlogPost" ? <Disqus config={disqusConfig} /> : ""}
+          </div>
         </article>
       </div>
-      <br />
-      {template === "BlogPost" ? <Disqus config={disqusConfig} /> : ""}
     </Layout>
   );
 }
@@ -78,6 +87,7 @@ export const pageQuery = graphql`
         title
         thumbnail
         metaDescription
+        hidden
       }
     }
   }

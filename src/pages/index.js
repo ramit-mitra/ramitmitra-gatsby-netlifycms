@@ -12,11 +12,13 @@ const IndexPage = ({
     allMarkdownRemark: { edges },
   },
 }) => {
-  console.log(edges);
+  // console.log(edges);
 
   const Posts = edges
-    .filter((edge) => !!edge.node.frontmatter.date) // You can filter your posts based on some criteria
+    // You can filter your posts based on some criterion
+    .filter((edge) => !!edge.node.frontmatter.date)
     .filter((edge) => edge.node.frontmatter.template !== "Project")
+    .filter((edge) => edge.node.frontmatter.hidden !== "yes")
     .map((edge) => <PostLink key={edge.node.id} post={edge.node} />);
 
   const Projects = edges
@@ -61,6 +63,7 @@ export const pageQuery = graphql`
             template
             projectUrl
             metaDescription
+            hidden
           }
         }
       }
