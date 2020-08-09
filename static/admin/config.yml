@@ -26,7 +26,7 @@ collections: # A list of collections the CMS should be able to edit
           - widget: text
             name: description
             label: Description
-            default: ''
+            default: ""
             required: false
           - widget: object
             name: home
@@ -35,27 +35,22 @@ collections: # A list of collections the CMS should be able to edit
               - widget: string
                 name: title
                 label: Title
-                default: ''
+                default: ""
                 required: false
               - widget: markdown
                 name: description
                 label: Description
-                default: ''
+                default: ""
                 required: false
   # PROJECTS
   - name: project
     label: Project
     folder: _data/project
-    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     sort: "date:desc" # Default is title:asc
     create: true # Allow users to create new documents in this collection
     fields: # The fields each document in this collection have
-      - {
-          label: Template,
-          name: template,
-          widget: hidden,
-          default: Project,
-        }
+      - { label: Template, name: template, widget: hidden, default: Project }
       - name: path
         label: Path
         widget: string
@@ -84,16 +79,11 @@ collections: # A list of collections the CMS should be able to edit
   - name: blog
     label: Blog
     folder: _data/blog
-    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     sort: "date:desc" # Default is title:asc
     create: true # Allow users to create new documents in this collection
     fields: # The fields each document in this collection have
-      - {
-          label: Template,
-          name: template,
-          widget: hidden,
-          default: BlogPost,
-        }
+      - { label: Template, name: template, widget: hidden, default: BlogPost }
       - name: path
         label: Path
         widget: string
@@ -113,4 +103,19 @@ collections: # A list of collections the CMS should be able to edit
         media_library:
           config:
             multiple: false
+      - label: "Hidden"
+        name: "hidden"
+        widget: "select"
+        required: false
+        default: "No"
+        options:
+          - { label: "Yes", value: true }
+          - { label: "No", value: false }
+        hint: "Mark this as YES to not show this post anywhere"
+      - {
+          label: "Categories",
+          name: "categories",
+          widget: "list",
+          required: false,
+        }
       - { name: body, label: Body, widget: markdown }

@@ -13,8 +13,9 @@ export default function Template({
   const { frontmatter, html } = markdownRemark;
   const { id } = pageContext.node;
   const { template } = pageContext.node.frontmatter;
+
   let disqusConfig = {
-    url: `${site.siteUrl + frontmatter.path}`,
+    url: `${site.siteMetadata.siteUrl + frontmatter.path}`,
     /* identifier: frontmatter.title + frontmatter.date, */
     identifier: id,
     title: frontmatter.title,
