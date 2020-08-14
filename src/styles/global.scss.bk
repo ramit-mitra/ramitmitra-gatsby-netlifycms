@@ -15,7 +15,7 @@ body {
   margin-top: 0;
 }
 body.light {
-  --primary-color: #9eb560;
+  --primary-color: #381696;
   --primary-text-color: #fff;
   --featured-bg: #493b8a;
   --featured-text: #fff;
