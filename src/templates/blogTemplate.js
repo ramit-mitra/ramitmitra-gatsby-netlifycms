@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import Helmet from "react-helmet";
 import { graphql } from "gatsby";
 import { Disqus, CommentCount } from "gatsby-plugin-disqus";
@@ -23,8 +23,12 @@ export default function Template({
 
   // console.log(frontmatter.hidden);
 
-  // if the post was hidden, you wont be able to see it and forced to return to home
-  if (frontmatter.hidden === "yes") return (window.location = "/");
+	useEffect(() => {
+		// if the post was hidden, you wont be able to see it and forced to return to home
+		if (frontmatter.hidden === "yes") return (window.location = "/");
+	}, []);
+
+  
 
   return (
     <Layout>
