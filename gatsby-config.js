@@ -56,7 +56,7 @@ module.exports = {
         short_name: `RamitMitra`,
         start_url: `/`,
         background_color: `#fff`,
-        theme_color: `#EE916F`,
+        theme_color: `#F27360`,
         display: `standalone`,
         icon: "src/images/icon.png",
       },

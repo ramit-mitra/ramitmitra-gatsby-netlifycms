@@ -15,12 +15,12 @@ body {
   margin-top: 0;
 }
 body.light {
-  --primary-color: #9eb560;
+  --primary-color: #f27360;
   --primary-text-color: #fff;
   --featured-bg: #493b8a;
   --featured-text: #fff;
   --secondary-color: #10072b;
-  --background: #f0d8aa;
+  --background: #fff;
   --site-header: var(--background);
   --card-bg: #fff;
   --card-bdr: #eee;
@@ -35,7 +35,7 @@ body.light {
   --input-bg: var(--background);
 }
 body.dark {
-  --primary-color: #9984d5;
+  --primary-color: #585f71;
   --primary-text-color: #fff;
   --featured-bg: #66578d;
   --featured-text: #fff;
