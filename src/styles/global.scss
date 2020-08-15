@@ -15,12 +15,12 @@ body {
   margin-top: 0;
 }
 body.light {
-  --primary-color: #427a5b;
+  --primary-color: #6643b5;
   --primary-text-color: #faf4f0;
-  --featured-bg: #7fd8be;
+  --featured-bg: #6643b5;
   --featured-text: #fff;
   --secondary-color: #10072b;
-  --background: #fcf5b8;
+  --background: #d5def5;
   --site-header: var(--background);
   --card-bg: #fff;
   --card-bdr: #eee;
@@ -30,12 +30,12 @@ body.light {
   --btn-text-color: #868892;
   --btn-hover-bg: var(--btn-bdr);
   --btn-hover-text-color: #00062b;
-  --contact-bg: #b4cd93;
-  --contact-bdr: #b4cd93;
+  --contact-bg: #8594e4;
+  --contact-bdr: #8594e4;
   --input-bg: var(--background);
 }
 body.dark {
-  --primary-color: #427a5b;
+  --primary-color: #6643b5;
   --primary-text-color: #fff;
   --featured-bg: #66578d;
   --featured-text: #fff;
