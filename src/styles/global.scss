@@ -15,27 +15,27 @@ body {
   margin-top: 0;
 }
 body.light {
-  --primary-color: #3a5874;
+  --primary-color: #3f8a72;
   --primary-text-color: #f0fdfa;
   --featured-bg: #63ded1;
   --featured-text: #f0fdfa;
-  --secondary-color: #78c5dc;
-  --background: #adecda;
+  --secondary-color: #c87948;
+  --background: #ded7ce;
   --site-header: var(--background);
-  --card-bg: #ffebcd;
-  --card-bdr: #adecda;
+  --card-bg: #bfb3a3;
+  --card-bdr: #ded7ce;
   --card-shadow: #d5d5d5;
   --btn-bg: var(--background);
   --btn-bdr: #f0fdfa;
   --btn-text-color: #868892;
   --btn-hover-bg: var(--btn-bdr);
   --btn-hover-text-color: #00062b;
-  --contact-bg: #63ded1;
-  --contact-bdr: #63ded1;
+  --contact-bg: #bfb3a3;
+  --contact-bdr: #bfb3a3;
   --input-bg: var(--background);
 }
 body.dark {
-  --primary-color: #577364;
+  --primary-color: #c87948;
   --primary-text-color: #fff;
   --featured-bg: #66578d;
   --featured-text: #fff;
