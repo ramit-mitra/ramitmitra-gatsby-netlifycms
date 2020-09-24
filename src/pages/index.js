@@ -1,10 +1,13 @@
-import React from "react";
+import React, {useEffect} from "react";
 import Helmet from "react-helmet";
 import { graphql } from "gatsby";
 import Layout from "../components/layout";
 import PostLink from "../components/post-link";
 import ProjectLink from "../components/project-link";
 import HeroHeader from "../components/heroHeader";
+
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 
 const IndexPage = ({
   data: {
@@ -25,6 +28,12 @@ const IndexPage = ({
     .filter((edge) => !!edge.node.frontmatter.date) // You can filter your posts based on some criteria
     .filter((edge) => edge.node.frontmatter.template === "Project")
     .map((edge) => <ProjectLink key={edge.node.id} post={edge.node} />);
+	
+	useEffect(() => {
+		toast("Wow so easy !");
+  }, []);
+	
+	
 
   return (
     <Layout>
@@ -37,6 +46,16 @@ const IndexPage = ({
       <div className="grids">{Posts}</div>
       <h2 className="project-header">Projects &darr;</h2>
       <div className="grids">{Projects}</div>
+	  <ToastContainer 
+position="top-right"
+autoClose={5000}
+hideProgressBar={false}
+newestOnTop={false}
+closeOnClick
+rtl={false}
+pauseOnFocusLoss
+draggable
+pauseOnHover />
     </Layout>
   );
 };

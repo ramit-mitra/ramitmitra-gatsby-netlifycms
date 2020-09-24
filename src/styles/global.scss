@@ -15,46 +15,46 @@ body {
   margin-top: 0;
 }
 body.light {
-  --primary-color: #3f8a72;
-  --primary-text-color: #f0fdfa;
-  --featured-bg: #63ded1;
-  --featured-text: #f0fdfa;
-  --secondary-color: #c87948;
-  --background: #ded7ce;
+  --primary-color: #424874;
+  --primary-text-color: #f4eeff;
+  --featured-bg: #a6b1e1;
+  --featured-text: #f4eeff;
+  --secondary-color: #dcd6f7;
+  --background: #f4eeff;
   --site-header: var(--background);
-  --card-bg: #bfb3a3;
-  --card-bdr: #ded7ce;
-  --card-shadow: #d5d5d5;
+  --card-bg: #dcd6f7;
+  --card-bdr: #dcd6f7;
+  --card-shadow: #424874;
   --btn-bg: var(--background);
-  --btn-bdr: #f0fdfa;
-  --btn-text-color: #868892;
-  --btn-hover-bg: var(--btn-bdr);
-  --btn-hover-text-color: #00062b;
-  --contact-bg: #bfb3a3;
-  --contact-bdr: #bfb3a3;
+  --btn-bdr: #a6b1e1;
+  --btn-text-color: #424874;
+  --btn-hover-bg: #424874;
+  --btn-hover-text-color: #a6b1e1;
+  --contact-bg: #a6b1e1;
+  --contact-bdr: #a6b1e1;
   --input-bg: var(--background);
 }
 body.dark {
-  --primary-color: #c87948;
+  --primary-color: #ca3e47;
   --primary-text-color: #fff;
-  --featured-bg: #66578d;
+  --featured-bg: #ca3e47;
   --featured-text: #fff;
-  --secondary-color: #66578d;
-  --background: #0a041a;
-  --text-color: rgba(255, 255, 255, 0.88);
-  --text-secondary-color: rgba(255, 255, 255, 0.66);
+  --secondary-color: #ca3e47;
+  --background: #313131;
+  --text-color: #eeeeee;
+  --text-secondary-color: #eeeeee;
   --site-header: var(--background);
-  --card-bg: #181326;
-  --card-bdr: #181326;
-  --card-shadow: #020204;
+  --card-bg: #414141;
+  --card-bdr: #414141;
+  --card-shadow: #313131;
   --btn-bg: var(--background);
-  --btn-bdr: #d3d6e7;
-  --btn-text-color: #868892;
+  --btn-bdr: #ca3e47;
+  --btn-text-color: #eeeeee;
   --btn-hover-bg: var(--btn-bdr);
-  --btn-hover-text-color: #00062b;
-  --contact-bg: var(--card-shadow);
-  --contact-bdr: var(--card-bg);
-  --input-bg: var(--card-bg);
+  --btn-hover-text-color: #eeeeee;
+  --contact-bg: #212121;
+  --contact-bdr: #212121;
+  --input-bg: #323232;
 }
 /* System Fonts as used by Medium and WordPress */
 body {
@@ -83,7 +83,7 @@ a {
   align-items: center;
   font-weight: 300;
   a {
-    color: #888;
+    color: var(--text-secondary-color);
     text-decoration: none;
     margin: 0 8px 0;
     &[aria-current] {
