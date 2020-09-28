@@ -44,7 +44,9 @@ export default ({ children }) => {
       </header>
       {children}
       <footer className="site-footer">
-        <p>&copy; {new Date().getFullYear()} Ramit Mitra</p>
+        <p className="footer-sign">Ramit Mitra</p>
+		<hr />
+        <p>&copy; {new Date().getFullYear()} All rights reserved</p>
       </footer>
     </div>
   );
